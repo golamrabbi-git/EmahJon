@@ -1,0 +1,11 @@
+.cart{
+    padding: 30px 20px;
+}
+.clear-cart{
+    height: 48px;
+    width: 232px;
+    color: white;
+    background: red;
+    margin-left: 35px;
+    margin-bottom: 20px;
+}

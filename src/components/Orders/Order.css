@@ -1,0 +1,9 @@
+.cart-container{
+    border-radius: 10px;
+
+}
+.clear-cart{
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0;
+}
