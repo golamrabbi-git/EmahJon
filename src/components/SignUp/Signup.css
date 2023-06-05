@@ -1,0 +1,22 @@
+.signup-container{
+padding: 30px;
+margin: 20px auto;
+width: 500px;
+height: 700px;
+background: #FFFFFF;
+border: 1px solid #95A0A7;
+border-radius: 8px;
+transform: translate(-5px, 5px);
+}
+
+
+.btn{
+    outline: none;
+    display: block;
+    margin: auto;
+    width: 440px;
+    margin-top: 30px;
+}
+.error-msg{
+    color: red;
+}

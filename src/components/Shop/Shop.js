@@ -1,18 +1,20 @@
 import React from 'react';
 import './Shop.css';
-import {useState,useEffect} from 'react';
+import {useState,useEffect, } from 'react';
 import { Product } from '../Product/Product';
 import {Cart} from '../Cart/Cart'
 import { addToDb, getStoredCart } from '../../utilities/fakedb';
-import { useLoaderData } from 'react-router-dom';
-import Orders from '../Orders/Orders';
+import { useLoaderData,useNavigate} from 'react-router-dom';
+import { Button } from 'react-bootstrap';
  
 export const Shop = () => {
     const products = useLoaderData();
     const [cart,setCart] = useState([]);
-
+    const navigate  = useNavigate();
+   
 
     useEffect(()=>{
+      
       const storedCart = getStoredCart();
       const savedCart= [];
     
@@ -46,6 +48,7 @@ export const Shop = () => {
         </div>
         <div className="cart-container">
            <Cart cart = {cart}></Cart>
+           <Button className='w-50' onClick={()=>navigate('/orders')} variant="primary">Review Order</Button>
            
         </div>
        

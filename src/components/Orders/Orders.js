@@ -1,17 +1,19 @@
 import React from 'react';
 import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
-import { deleteShoppingCart,removeFromDb,getStoredCart } from '../../utilities/fakedb';
+import { useLoaderData ,useNavigate} from 'react-router-dom';
+import { deleteShoppingCart,removeFromDb} from '../../utilities/fakedb';
 import { Cart } from '../Cart/Cart';
 import OrderReview from '../Order Review/OrderReview';
 import './Order.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 
 const Orders = () => {
     const {LoadedProducts , selectedProducts} = useLoaderData();
     const [cart,setCart] = useState(selectedProducts);
+    const navigate  = useNavigate();
+
 
     const removeItem =(id)=>{
       const updatedCart = cart.filter(remainingProduct => remainingProduct.id !== id);
@@ -40,6 +42,9 @@ const Orders = () => {
         <div className="cart-container">
         <Cart cart = {cart}></Cart>
         <button className='clear-cart' onClick={()=>clearCart()} >Clear Cart <FontAwesomeIcon icon={faTrashCan} /></button>
+
+        <button className='clear-cart' onClick={()=>navigate('/shipping')} >Proceed Order <FontAwesomeIcon icon={faArrowRight} /></button>
+        
         
         </div>
        

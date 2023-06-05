@@ -17,3 +17,9 @@
 .header a:hover{
     color: coral;
 }
+.pill{
+    margin-left: 15px;
+}
+.pill:hover{
+   color: #1C2B35;
+}
