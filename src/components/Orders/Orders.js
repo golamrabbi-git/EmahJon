@@ -16,7 +16,9 @@ const Orders = () => {
 
 
     const removeItem =(id)=>{
-      const updatedCart = cart.filter(remainingProduct => remainingProduct.id !== id);
+    
+      console.log('Remove Item clicked',id);
+      const updatedCart = cart.filter(remainingProduct => remainingProduct._id !== id);
       setCart(updatedCart);
       removeFromDb(id)
       
@@ -33,19 +35,17 @@ const Orders = () => {
         <div className="order-container">
       {
           cart.map(item=> <OrderReview 
-            key ={ item.id}
+            key ={ item._id}
             item = {item}
             removeItem = {removeItem}
             ></OrderReview>)
       }
+      
         </div>
         <div className="cart-container">
         <Cart cart = {cart}></Cart>
         <button className='clear-cart' onClick={()=>clearCart()} >Clear Cart <FontAwesomeIcon icon={faTrashCan} /></button>
-
-        <button className='clear-cart' onClick={()=>navigate('/shipping')} >Proceed Order <FontAwesomeIcon icon={faArrowRight} /></button>
-        
-        
+        <button className='clear-cart' onClick={()=>navigate('/shipping')} >Proceed Order <FontAwesomeIcon icon={faArrowRight} /></button>          
         </div>
        
     </div>

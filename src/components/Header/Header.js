@@ -34,7 +34,7 @@ import './Header.css'
           </>
           }
         </div>
-        </nav>
+    </nav>
   )
 }
 

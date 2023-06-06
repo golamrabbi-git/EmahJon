@@ -37,9 +37,9 @@ const UserContext = ({children}) => {
    },[])
     
 
-    const values = {user,loading,CreateUser,SignIn,logOut}
+  
     return (
-        <AuthContext.Provider value = {values}>
+        <AuthContext.Provider value = {{user,loading,CreateUser,SignIn,logOut}}>
            {children}
         </AuthContext.Provider>
     );

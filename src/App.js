@@ -30,15 +30,13 @@ function App() {
         {path:'login',element:<Login></Login>},
         {
           path:"/",
-          loader:()=>fetch('https://mocki.io/v1/ade6d28c-29c0-42af-9d9f-115e1fab231e') ,
+          loader:()=>fetch('http://localhost:5000/products') ,
           element:<Shop></Shop>
     
         },
         {
           path:"/shop",
-          loader:()=>fetch('https://mocki.io/v1/ade6d28c-29c0-42af-9d9f-115e1fab231e'),
           element:<Shop></Shop>
-    
         },
         {
           path:'/shipping',
